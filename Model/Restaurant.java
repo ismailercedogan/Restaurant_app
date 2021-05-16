@@ -82,7 +82,21 @@ public double calculateExpenses() {
 return employeeExpenses+orderExpenses;
 }
 public double calculateRevenue() {
-	return Order.calculateTotalPrice();
+	double revenue=0.0;
+	ArrayList<Order>receivedOrders=new ArrayList<>();
+	ArrayList<Waiter>waiters=new ArrayList<>();
+	for(Employee employee:employees) {
+		if(employee instanceof Waiter) {
+			waiters.add((Waiter)employee);
+		}
+	}
+	for(Waiter waiter:waiters) {
+		receivedOrders=waiter.getOrdersReceived();
+	} 
+	for (Order order:receivedOrders) {
+		revenue+=order.calculateTotalPrice();
+	}
+	return revenue;
 }
 public ArrayList<Product> getProducts(){
 	return products;

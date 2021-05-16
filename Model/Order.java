@@ -18,4 +18,14 @@ public void listOrder() {
 		}
 	}
 }
+public ArrayList<Product> gerOrderedProducts(){
+	return orders;
+}
+public double calculateTotalPrice() {
+	double totalPrice=0.0;
+	for(Product order:orders) {
+		totalPrice+=order.getSellingPrice();
+	}
+return totalPrice;
+}
 }

@@ -12,7 +12,14 @@ public Waiter(int id,String name) {
 public double calculateExpense() {
 	double total=0;
 	for(int i=0;i<orders.size();i++) {
-		total+=orders.get(i).calculateTotalPrice*this.orderRate;
+		total+=orders.get(i).calculateTotalPrice()*this.orderRate;
 	}
+return total;
 }
+public void createOrder(Order order) {
+	orders.add(order);
+}
+public ArrayList<Order> getOrdersReceived(){
+	return this.orders;
+}	
 }
