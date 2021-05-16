@@ -20,6 +20,6 @@ public void createOrder(Order order) {
 	this.orders.add(order);
 }
 public ArrayList<Order> getOrdersReceived(){
-	return this.orders;
+	return this.orders;	
 }	
 }

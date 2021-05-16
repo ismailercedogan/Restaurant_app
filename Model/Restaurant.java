@@ -91,7 +91,10 @@ public double calculateRevenue() {
 		}
 	}
 	for(Waiter waiter:waiters) {
-		receivedOrders=waiter.getOrdersReceived();
+		ArrayList<Order>getOrders=waiter.getOrdersReceived();
+		for(Order get:getOrders) {
+			receivedOrders.add(get);
+		}
 	} 
 	for (Order order:receivedOrders) {
 		revenue+=order.calculateTotalPrice();

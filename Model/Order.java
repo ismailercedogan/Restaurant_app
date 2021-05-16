@@ -26,6 +26,6 @@ public double calculateTotalPrice() {
 	for(Product order:orders) {
 		totalPrice+=order.getSellingPrice();
 	}
-return totalPrice;
+return totalPrice;	
 }
 }
