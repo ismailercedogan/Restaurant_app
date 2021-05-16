@@ -1,8 +1,8 @@
 package Model;
 
 public class MainDish extends Product{
-public MainDish(String name,double purchasePrice,double sellingPrice,double utilityCost) {
-	super(name,purchasePrice,sellingPrice,utilityCost);
+public MainDish(String name,double sellingPrice,double purchasePrice,double utilityCost) {
+	super(name,sellingPrice,purchasePrice,utilityCost);
 }
 public double calculateExpense() {
 	return super.getPuchasePrice()+super.getUtilityCost();

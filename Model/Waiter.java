@@ -17,7 +17,7 @@ public double calculateExpense() {
 return total;
 }
 public void createOrder(Order order) {
-	orders.add(order);
+	this.orders.add(order);
 }
 public ArrayList<Order> getOrdersReceived(){
 	return this.orders;
