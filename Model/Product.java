@@ -33,6 +33,6 @@ public double getUtilityCost() {
 	return this.utilityCost;
 }
 public String toString() {
-	return "";
+	return getName()+": "+getSellingPrice();
 }
 }
