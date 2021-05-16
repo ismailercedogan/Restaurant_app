@@ -26,13 +26,13 @@ public double getSellingPrice() {
 	double totalPrice=0.0;
 	for(Product product:this.products) {
 		if(product instanceof MainDish) {
-			totalPrice+=(((MainDish)product).calculateExpense())-(((MainDish)product).calculateExpense()*0.1);
+			totalPrice+=(((MainDish)product).getSellingPrice())-(((MainDish)product).getSellingPrice()*0.1);
 		}
 		if(product instanceof Dessert) {
-			totalPrice+=(((Dessert)product).calculateExpense())-(((Dessert)product).calculateExpense()*0.2);
+			totalPrice+=(((Dessert)product).getSellingPrice())-(((Dessert)product).getSellingPrice()*0.2);
 		}	
 		if(product instanceof Beverage) {
-			totalPrice+=(((Beverage)product).calculateExpense())-(((Beverage)product).calculateExpense())*0.5;
+			totalPrice+=(((Beverage)product).getSellingPrice())-(((Beverage)product).getSellingPrice())*0.5;
 		}
 	}
 return totalPrice;
