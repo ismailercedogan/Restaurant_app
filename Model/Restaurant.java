@@ -75,10 +75,32 @@ public double calculateExpenses() {
 	for(int i=0;i<employees.size();i++) {
 		employeeExpenses+=employees.get(i).calculateExpense();
 	}
+	System.out.println("Employee expenses: "+employeeExpenses);
 	double orderExpenses=0;
-	for(int i=0;i<products.size();i++) {
-		orderExpenses+=products.get(i).calculateExpense();
+	ArrayList<Order>receivedOrders=new ArrayList<>();
+	ArrayList<Waiter>waiters=new ArrayList<>();
+	ArrayList<Product>receivedProduct=new ArrayList<>();
+	for(Employee employee:employees) {
+		if(employee instanceof Waiter) {
+			waiters.add((Waiter)employee);
+		}
 	}
+	for(Waiter waiter:waiters) {
+		ArrayList<Order>getOrders=waiter.getOrdersReceived();
+		for(Order get:getOrders) {
+			receivedOrders.add(get);
+		}
+	} 
+	for (Order order:receivedOrders) {
+		ArrayList<Product>getProducts=order.gerOrderedProducts();
+		for(Product get:getProducts) {
+			receivedProduct.add(get);
+		}
+	}
+	for(Product received: receivedProduct) {
+		orderExpenses+=received.calculateExpense();
+	}
+	System.out.println("Order Expenses: "+orderExpenses);
 return employeeExpenses+orderExpenses;
 }
 public double calculateRevenue() {
