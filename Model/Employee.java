@@ -13,7 +13,9 @@ public int getId() {
 public String getName() {
 	return this.name;
 }
-
+public String toString() {
+	return "Employee "+ this.id+": "+this.name;
+}
 	
 
 }

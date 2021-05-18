@@ -46,11 +46,12 @@ public class Restaurant {
 		products.add(new MenuProduct("Kids Menu", Kidsproducts));
 	}
 public void listEmployees() {
-	for(int i=0;i<employees.size();i++) {
-		System.out.println("Employee "+(i+1)+": "+employees.get(i).getName());
+	for(Employee employee:employees) {
+		System.out.println(employee);
+	}
 	}
 	
-}
+
 public void addCook(String name, double salary) {
 	int id=employees.size()+1;
 	Employee cook=new Cook(id,name,salary);
