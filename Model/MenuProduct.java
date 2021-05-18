@@ -22,7 +22,7 @@ public double calculateExpense() {
 	}
 return totalExpense;
 }
-public double getSellingPrice() {
+private double calculateSellingPrice() {
 	double totalPrice=0.0;
 	for(Product product:this.products) {
 		if(product instanceof MainDish) {
@@ -36,5 +36,10 @@ public double getSellingPrice() {
 		}
 	}
 return totalPrice;
+
+}
+public double getSellingPrice() {
+	super.setSellingPrice(this.calculateSellingPrice());
+return this.calculateSellingPrice();
 }
 }
