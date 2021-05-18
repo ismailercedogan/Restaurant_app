@@ -80,23 +80,27 @@ public double calculateExpenses() {
 	ArrayList<Order>receivedOrders=new ArrayList<>();
 	ArrayList<Waiter>waiters=new ArrayList<>();
 	ArrayList<Product>receivedProduct=new ArrayList<>();
+	//access to waiters
 	for(Employee employee:employees) {
 		if(employee instanceof Waiter) {
 			waiters.add((Waiter)employee);
 		}
 	}
+	//access to orders from each waiter who got order
 	for(Waiter waiter:waiters) {
 		ArrayList<Order>getOrders=waiter.getOrdersReceived();
 		for(Order get:getOrders) {
 			receivedOrders.add(get);
 		}
 	} 
+	//access to products from each order which received
 	for (Order order:receivedOrders) {
 		ArrayList<Product>getProducts=order.gerOrderedProducts();
 		for(Product get:getProducts) {
 			receivedProduct.add(get);
 		}
 	}
+	//access to expense of each product and find the total order expense
 	for(Product received: receivedProduct) {
 		orderExpenses+=received.calculateExpense();
 	}
@@ -104,20 +108,24 @@ public double calculateExpenses() {
 return employeeExpenses+orderExpenses;
 }
 public double calculateRevenue() {
+	
 	double revenue=0.0;
 	ArrayList<Order>receivedOrders=new ArrayList<>();
 	ArrayList<Waiter>waiters=new ArrayList<>();
+	//access to waiters 
 	for(Employee employee:employees) {
 		if(employee instanceof Waiter) {
 			waiters.add((Waiter)employee);
 		}
 	}
+	//access to received orders from each waiter who got order
 	for(Waiter waiter:waiters) {
 		ArrayList<Order>getOrders=waiter.getOrdersReceived();
 		for(Order get:getOrders) {
 			receivedOrders.add(get);
 		}
 	} 
+	//access to total price of each order and find the revenue
 	for (Order order:receivedOrders) {
 		revenue+=order.calculateTotalPrice();
 	}
