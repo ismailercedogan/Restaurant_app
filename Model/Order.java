@@ -18,7 +18,7 @@ public void listOrder() {
 		}
 	}
 }
-public ArrayList<Product> gerOrderedProducts(){
+public ArrayList<Product> getOrderedProducts(){
 	return orders;
 }
 public double calculateTotalPrice() {

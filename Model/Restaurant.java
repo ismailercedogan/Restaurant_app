@@ -71,7 +71,7 @@ public Waiter assignWaiter() {
 	}
 	}
 }
-public double calculateExpenses() {
+public double 	calculateExpenses() {
 	double employeeExpenses=0;
 	for(int i=0;i<employees.size();i++) {
 		employeeExpenses+=employees.get(i).calculateExpense();
@@ -96,7 +96,7 @@ public double calculateExpenses() {
 	} 
 	//access to products from each order which received
 	for (Order order:receivedOrders) {
-		ArrayList<Product>getProducts=order.gerOrderedProducts();
+		ArrayList<Product>getProducts=order.getOrderedProducts();
 		for(Product get:getProducts) {
 			receivedProduct.add(get);
 		}
